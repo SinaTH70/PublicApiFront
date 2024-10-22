@@ -25,3 +25,7 @@ body {
     text-wrap: balance;
   }
 }
+
+body{
+  direction: rtl !important;
+}

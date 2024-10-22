@@ -1,24 +1,26 @@
-"use client"
-import dynamic from 'next/dynamic';
+"use client";
+import dynamic from "next/dynamic";
 // import "@/app/globals.css";
 import "@/app/app.css";
 
 import { Form } from "@formio/react";
+import MainLayout from "@/app/layouts/_main-layout";
 
-const MyComponent = dynamic(() => import('@/app/components/formiocomponent'), {
-    ssr: false // This ensures the component is not SSR'd
+const MyComponent = dynamic(() => import("@/app/components/formiocomponent"), {
+  ssr: false, // This ensures the component is not SSR'd
 });
 
 export default function Page({ data }: { data: any }) {
-
   // Render data...
   return (
     <>
-      <p>Hello</p>
-      <div style={{width:'50%'}}>
-        <MyComponent />
-        {/* <Form form={formData} /> */}
-      </div>
+      <MainLayout>
+        <p>لطفا فرم 'ارزیابی موکب‌های اربعین' را با دقت تکمیل کنید</p>
+        <div style={{ width: "50%" }}>
+          <MyComponent />
+          {/* <Form form={formData} /> */}
+        </div>
+      </MainLayout>
     </>
   );
 }
